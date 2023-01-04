@@ -1,22 +1,28 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import "../index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMugHot, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import avatar from "../image/avatar.png"
 import { motion } from 'framer-motion';
-import {useHistory, Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { auth } from "../firebase"
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { useSelector,useDispatch } from 'react-redux'
-import { getCartTotal } from '../features/cartSlice';
+import { useSelector } from 'react-redux';
+// import { useSelector,useDispatch } from 'react-redux'
+// import { getCartTotal } from '../features/cartSlice';
 
 const Header = () => {
+  const cart = useSelector(
+    (state) => state.cart
+  );
 
-  const {cart,totalQuantity} = useSelector((state) => state.allCart)
-  const dispatch = useDispatch();
-  useEffect(() => {
-      dispatch(getCartTotal())
-  }, [cart])
+  const noOfItems = cart.reduce((acc, curr) => acc + curr.quantity, 0)
+  console.log({noOfItems})
+  // const {cart,totalQuantity} = useSelector((state) => state.allCart)
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //     dispatch(getCartTotal())
+  // }, [cart])
 
   const history = useHistory();
   const profilePic = localStorage.getItem("profilePic")
@@ -32,7 +38,7 @@ const Header = () => {
     })).catch((error) => console.log(error))
   }
 
-  const loggingOut=()=>{
+  const loggingOut = () => {
     localStorage.clear();
     history.push("/");
     window.location.reload();
@@ -55,8 +61,8 @@ const Header = () => {
 
       {/* <a href="#" class="btn">BOOK A TABLE</a> */}
       <div className='side-menu'>
-      <Link to="/cart"><motion.p className='btn1' whileTap={{ scale: 0.5 }}> <FontAwesomeIcon icon={faCartShopping} className="logo" /> </motion.p></Link>
-        <p className='cart-data'>{totalQuantity}</p>
+        <Link to="/cart"><motion.p className='btn1' whileTap={{ scale: 0.5 }}> <FontAwesomeIcon icon={faCartShopping} className="logo" /> </motion.p></Link>
+        <p className='cart-data'>{noOfItems}</p>
 
         {isLoggedIn &&
           (<>
@@ -64,10 +70,10 @@ const Header = () => {
             <motion.button whileTap={{ scale: 0.5 }} onClick={loggingOut} className='btn'>LOGOUT</motion.button>
           </>)}
 
-          {!isLoggedIn && (<>
-            <motion.img whileTap={{ scale: 0.5 }} src={avatar} className="Avatar" />
-            <motion.button whileTap={{ scale: 0.5 }} onClick={signInwithGoogle} className='btn'>LOGIN</motion.button>
-          </>)}
+        {!isLoggedIn && (<>
+          <motion.img whileTap={{ scale: 0.5 }} src={avatar} className="Avatar" />
+          <motion.button whileTap={{ scale: 0.5 }} onClick={signInwithGoogle} className='btn'>LOGIN</motion.button>
+        </>)}
       </div>
 
 
