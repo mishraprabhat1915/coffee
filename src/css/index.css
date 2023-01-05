@@ -140,7 +140,7 @@ section{
 .home{
     min-height: 100vh;
     padding-top: 12rem;
-    background: url(./image/home-bg.jpg) no-repeat;
+    background: url(../image/home-bg.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -274,7 +274,7 @@ section{
 
 .menu{
     margin-top: 60px;
-    background: url(./image/menu-bg.jpg) no-repeat;
+    background: url(../image/menu-bg.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -406,6 +406,10 @@ section{
     color:var(--main-color);
 }
 
+.swiper-slide{
+    margin-top: 1.5rem;
+}
+
 .swiper-pagination-bullet{
     height:1.5rem;
     width:1.5rem;
@@ -417,7 +421,7 @@ section{
 }
 
 .book{
-    background:url(./image/book-bg.jpg) no-repeat;
+    background:url(../image/book-bg.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }

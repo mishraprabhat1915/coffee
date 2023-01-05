@@ -1,13 +1,11 @@
-import './App.css';
 import Home from './components/Home';
 import About from './components/About';
 import Menu from './components/Menu';
 import Review from './components/Review';
 import Booking from './components/Booking';
 import { Route, Switch } from 'react-router-dom';
-import SignUpPage from './components/SignUpPage';
-import LoginPage from './components/LoginPage';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 
 function App() {
   return (
@@ -27,14 +25,11 @@ function App() {
           <Route path="/book">
             <Booking />
           </Route>
-          <Route path="/register">
-            <SignUpPage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
           <Route path="/cart">
             <Cart />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
     </Switch>
   );

@@ -1,11 +1,14 @@
-import React, { useEffect, useState, useContext } from 'react'
-import "../index.css"
-import Header from './Header';
-import useGetProducts from './useGetProducts';
+import React, { useEffect, useState } from 'react'
+import "../css/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
+import Footer from './Footer';
+import Header from "./Header";
+import useGetProducts from "./useGetProducts";
+import { MagnifyingGlass } from 'react-loader-spinner'
+import { Link } from 'react-router-dom';
 
 
 
@@ -34,8 +37,8 @@ const Menu = ({ children }) => {
     return (
         <>
             <Header />
-            <section class="menu" id="menu">
-                <h1 class="heading"> our menu <span>popular menu</span> </h1>
+            <section className="menu" id="menu">
+                <h1 className="heading"> our menu <span>popular menu</span> </h1>
 
                 <div className='coffe-options'>
                     <button className='btn' onClick={() => filterData("cold coffee")} >ICED COFFEE</button>
@@ -46,13 +49,22 @@ const Menu = ({ children }) => {
                 </div>
                 <br></br>
                 <br></br>
-                <div class="box-container">
-                    {loading ? <h1>Loading....</h1> :
+                <div className="box-container">
+                    {loading ? <MagnifyingGlass
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="MagnifyingGlass-loading"
+                        wrapperStyle={{}}
+                        wrapperclassName="MagnifyingGlass-wrapper"
+                        glassColor='#c0efff'
+                        color='#e15b64'
+                    /> :
                         products.map((item) => {
                             return (
-                                <a href="#" class="box" key={item.id}>
+                                <Link to="#" className="box" key={item.id}>
                                     <img src={item.image} alt={item.title} />
-                                    <div class="content">
+                                    <div className="content">
                                         <h3>{item.title}</h3>
                                         <p>{item.description}</p>
                                         <span><b>${item.price}</b></span>
@@ -61,13 +73,14 @@ const Menu = ({ children }) => {
                                     <button className='btn' onClick={() =>
                                         dispatch(addToCart(item))
                                     }><FontAwesomeIcon icon={faCartShopping} /></button>
-                                </a>
+                                </Link>
                             )
                         })
                     }
                 </div>
 
             </section>
+            <Footer />
         </>
     )
 }

@@ -30,6 +30,10 @@
     border-radius: 50%;
 }
 
+.cart-items{
+    margin-top: 1.5rem;
+}
+
 .box-cart .box img:hover{
     height: 12rem;
     margin-left: -6rem;
@@ -67,4 +71,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cart-details{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.price-data{
+    font-size: 2rem;
+    
 }

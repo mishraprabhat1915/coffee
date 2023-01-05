@@ -1,36 +1,39 @@
 import React from 'react'
-import "../index.css"
+import "../css/index.css"
 import Img1 from "../image/home-img-1.png"
 import Img2 from "../image/home-img-2.png"
 import Img3 from "../image/home-img-3.png"
-import Header from './Header';
 import { Link } from 'react-router-dom';
+import Header from './Header'
+import Footer from './Footer'
+
 
 const Home = () => {
   return (
     <>
-      <section class="home" id="home">
+      <section className="home" id="home">
         <Header />
-        <div class="row">
+        <div className="row">
 
-          <div class="content">
+          <div className="content">
             <h3>fresh coffee in the morning</h3>
-            <Link to="/menu" class="btn">BUY ONE NOW</Link>
+            <Link to="/menu" className="btn">BUY ONE NOW</Link>
           </div>
 
-          <div class="image">
-            <img src={Img1} class="main-home-image" alt="image" />
+          <div className="image">
+            <img src={Img1} className="main-home-image" alt="coffeeImage" />
           </div>
 
         </div>
 
-        <div class="image-slider">
-          <img src={Img1} alt="image" />
-          <img src={Img2} alt="image" />
-          <img src={Img3} alt="image" />
+        <div className="image-slider">
+          <img src={Img1} alt="coffeeImage" />
+          <img src={Img2} alt="coffeeImage" />
+          <img src={Img3} alt="coffeeImage" />
 
         </div>
       </section>
+      <Footer/>
     </>
 
   )

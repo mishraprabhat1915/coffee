@@ -1,0 +1,14 @@
+.checkout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem;
+}
+.checkout img{
+    width: 200px;
+    min-width: 300px;
+}
+
+
+
+

@@ -1,0 +1,14 @@
+.footer-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.footerHeader{
+    font-size: 3rem;
+}
+
+.footerLinks{
+    font-size: 1.5rem ;
+    color:#808080
+    ;
+}

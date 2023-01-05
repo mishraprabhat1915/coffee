@@ -1,5 +1,5 @@
 import React from 'react'
-import "../index.css"
+import "../css/index.css"
 import ReviewPic1 from "../image/pic-1.png"
 import ReviewPic2 from "../image/pic-2.png"
 import ReviewPic3 from "../image/pic-3.png"
@@ -7,24 +7,25 @@ import ReviewPic4 from "../image/pic-4.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Header from './Header';
+import Footer from './Footer'
 
 const Review = () => {
   return (
     <>
     <Header/>
-    <section class="review" id="review">
+    <section className="review" id="review">
 
-    <h1 class="heading"> reviews <span>what people says</span> </h1>
+    <h1 className="heading"> reviews <span>what people says</span> </h1>
 
-    <div class="swiper review-slider">
+    <div className="swiper review-slider">
 
-        <div class="swiper-wrapper">
+        <div className="swiper-wrapper">
 
-            <div class="swiper-slide box">
-                <i class="fas fa-quote-left"></i>
-                <i class="fas fa-quote-right"></i>
+            <div className="swiper-slide box">
+                <i className="fas fa-quote-left"></i>
+                <i className="fas fa-quote-right"></i>
                 <img src={ReviewPic1} alt=""/>
-                <div class="stars">
+                <div className="stars">
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
@@ -36,11 +37,11 @@ const Review = () => {
                 <span>satisfied client</span>
             </div>
 
-            <div class="swiper-slide box">
-                <i class="fas fa-quote-left"></i>
-                <i class="fas fa-quote-right"></i>
+            <div className="swiper-slide box">
+                <i className="fas fa-quote-left"></i>
+                <i className="fas fa-quote-right"></i>
                 <img src={ReviewPic2} alt=""/>
-                <div class="stars">
+                <div className="stars">
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
@@ -52,11 +53,11 @@ const Review = () => {
                 <span>satisfied client</span>
             </div>
 
-            <div class="swiper-slide box">
-                <i class="fas fa-quote-left"></i>
-                <i class="fas fa-quote-right"></i>
+            <div className="swiper-slide box">
+                <i className="fas fa-quote-left"></i>
+                <i className="fas fa-quote-right"></i>
                 <img src={ReviewPic3} alt=""/>
-                <div class="stars">
+                <div className="stars">
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
@@ -68,11 +69,11 @@ const Review = () => {
                 <span>satisfied client</span>
             </div>
 
-            <div class="swiper-slide box">
-                <i class="fas fa-quote-left"></i>
-                <i class="fas fa-quote-right"></i>
+            <div className="swiper-slide box">
+                <i className="fas fa-quote-left"></i>
+                <i className="fas fa-quote-right"></i>
                 <img src={ReviewPic4} alt=""/>
-                <div class="stars">
+                <div className="stars">
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />
@@ -86,11 +87,12 @@ const Review = () => {
 
         </div>
 
-        <div class="swiper-pagination"></div>
+        <div className="swiper-pagination"></div>
 
     </div>
 
 </section>
+<Footer/>
 </>
   )
 }

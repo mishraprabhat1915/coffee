@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import  { useState, useEffect } from 'react'
 import { db } from "../firebase"
 import { collection, getDocs } from 'firebase/firestore';
 const useGetProducts = () => {
@@ -8,6 +8,7 @@ const useGetProducts = () => {
   const productData = collection(db, "products")
   useEffect(() => {
     getData()
+    // eslint-disable-next-line
   }, [])
 
   const getData = async () => {

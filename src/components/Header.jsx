@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import "../index.css"
+import React from 'react'
+import "../css/index.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMugHot, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import avatar from "../image/avatar.png"
@@ -8,9 +8,6 @@ import { useHistory, Link } from 'react-router-dom';
 import { auth } from "../firebase"
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { useSelector } from 'react-redux';
-// import { useSelector,useDispatch } from 'react-redux'
-// import { getCartTotal } from '../features/cartSlice';
-
 const Header = () => {
   const cart = useSelector(
     (state) => state.cart
@@ -44,14 +41,14 @@ const Header = () => {
     window.location.reload();
   }
   return (
-    <header class="header">
+    <header className="header">
 
-      <div id="menu-btn" class="fas fa-bars"></div>
+      <div id="menu-btn" className="fas fa-bars"></div>
 
-      <Link to="/" class="logo"> coffee <FontAwesomeIcon icon={faMugHot} />
+      <Link to="/" className="logo"> coffee <FontAwesomeIcon icon={faMugHot} />
       </Link>
 
-      <nav class="navbar">
+      <nav className="navbar">
         <Link to="/">HOME</Link>
         <Link to="/about">ABOUT</Link>
         <Link to="/menu">MENU</Link>
@@ -59,7 +56,6 @@ const Header = () => {
         <Link to="/book">BOOK</Link>
       </nav>
 
-      {/* <a href="#" class="btn">BOOK A TABLE</a> */}
       <div className='side-menu'>
         <Link to="/cart"><motion.p className='btn1' whileTap={{ scale: 0.5 }}> <FontAwesomeIcon icon={faCartShopping} className="logo" /> </motion.p></Link>
         <p className='cart-data'>{noOfItems}</p>
